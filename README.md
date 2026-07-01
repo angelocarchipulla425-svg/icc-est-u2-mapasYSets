@@ -1,4 +1,4 @@
-# Proyecto: Árboles Binarios (PreOrder, InOrder, PostOrder)
+# Métodos de Mapas y Sets
 
 ## Datos del Estudiante
 
@@ -11,14 +11,16 @@
 ---
 # Explicación Técnica de la Implementación
 
-A continuación, se detalla la lógica y decisiones técnicas aplicadas en la clase `PersonaController` haciendo uso de estructuras de datos nativas, sin modificar el modelo original ni utilizar utilidades de ordenamiento externo o *Streams*.
+A continuación, se detalla la lógica aplicada en la clase `PersonaController` haciendo uso de estructuras de datos, sin modificar el modelo original ni utilizar utilidades de ordenamiento externo o *Streams*.
 
 ## Método A: `filtrarYOrdenar`
 
 * **¿Qué implementación de Set se utilizó?**
+
     Se utilizó la implementación `TreeSet`.
 * **¿Por qué se eligió esa implementación?**
-    Al estar prohibido modificar la clase `Persona` (por lo tanto, no se pueden sobrescribir sus métodos `equals` ni `hashCode`), no era posible usar un `HashSet` para detectar duplicados lógicos. `TreeSet` permite recibir un `Comparator` en su constructor, delegando en este tanto la responsabilidad del ordenamiento como la de determinar la igualdad de los objetos, cumpliendo así el requerimiento sin alterar el modelo.
+
+    Se eligió el `TreeSet` permite recibir un `Comparator` en su constructor, haciendo que ordene y determine la igualdad de los objetos, cumpliendo así con lo pedido sin alterar el modelo.
 * **¿Cómo se garantiza la unicidad de los datos?**
     La unicidad se garantiza mediante la interfaz del `Comparator`. En un `TreeSet`, si el método `compare(Persona p1, Persona p2)` devuelve `0`, la estructura trata a ambos elementos como duplicados y descarta el segundo. Al comparar primero la edad y luego el nombre (`compareToIgnoreCase`), cualquier par de objetos con misma edad y mismo nombre sin importar mayúsculas devolverá `0`, conservando solo uno.
 * **¿Cómo se conserva o define el orden de los resultados?**
