@@ -26,7 +26,7 @@ public class PersonaController {
                     return Integer.compare(p2.getEdad(), p1.getEdad()); 
                 }
                 // 2. Si la edad es igual, ordenar por nombre ascendente ignorando mayúsculas
-                return p1.getNombre().compareToIgnoreCase(p2.getNombre());
+                return p1.getNombre().compareTo(p2.getNombre());
             }
         });
 

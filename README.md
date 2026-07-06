@@ -51,7 +51,7 @@ Hago un ciclo `for` y si la persona pasa el umbral de edad, la agrego al `TreeSe
 * **¿Cómo se conserva o define el orden de los resultados?** 
 
     Las categorías quedan alfabéticas gracias al `TreeMap`, y los nombres se quedan tal cual fueron apareciendo en la lista original por el `LinkedHashSet`.
-
+l
 * **¿Cómo funciona la lógica aplicada en el método?** 
 
     Uso unos `if` para ver en qué rango de edad cae la persona, saco su primer nombre y lo agrego directo al grupo que le toca dentro del mapa.
